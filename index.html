@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0630JS</title>
+</head>
+<style type="text/css" media="screen">
+	body
+	{
+		background-color:pink;
+	}	
+</style>
+<body>
+<h1>JavaScript練習網頁</h1>
+<h3 id="title"></h3>
+<div id="demo_1">TEST!!!!</div>
+<script>
+	var a=1,b=2,sum=0;
+	document.write("<h2>Nara</h2>");
+	function number_01()
+	{
+		x=document.getElementById("title");
+		x.innerHTML="按鈕觸發事件";
+
+		x=document.getElementById("demo_1");
+		x.innerHTML="HelloWorld!!!";
+	}
+	function number_02()
+	{
+
+		x=document.getElementById("title");
+		x.innerHTML="運算";
+
+		x=document.getElementById("demo_1");
+		sum=a+b;
+		x.innerHTML="a="+a+","+"b="+b+",a+b="+sum;	
+	}
+	function number_03()
+	{
+		var i,j;
+		
+		var div =document.getElementById("title");
+		var div =document.getElementById("demo_1");
+		title.textContent="九九乘法表";
+		demo_1.innerText="";
+		for(i=1;i<10;i++)
+		{
+			for(j=1;j<10;j++)
+			{
+				if((i*j)>=10)
+				{
+					demo_1.innerText=demo_1.innerText+j+"*"+i+"="+i*j+" | ";		
+				}
+				else
+				{
+					demo_1.innerText=demo_1.innerText+j+"*"+i+" = "+i*j+" | ";
+					
+				}
+			}
+
+			demo_1.innerText="\ "+demo_1.innerText+"\n";
+		}
+			// document.write("請按重新整理回頁面<br>");
+		
+	}
+</script>
+<button type="button" onclick="number_01()">練習1</button>
+<button type="button" onclick="number_02()">練習2</button>
+<button type="button" onclick="number_03()">練習3</button>
+
+
+
+</body>
+</html>
