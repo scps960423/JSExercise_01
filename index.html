@@ -15,31 +15,30 @@
 <h3 id="title"></h3>
 <div id="demo_1">TEST!!!!</div>
 <script>
-	var a=1,b=2,sum=0;
+	
 	document.write("<h2>Nara</h2>");
 	function number_01()
 	{
-		x=document.getElementById("title");
-		x.innerHTML="按鈕觸發事件";
+		//寫法一
+		document.getElementById("title").innerHTML="按鈕觸發事件";
+		//寫法二
 		x=document.getElementById("demo_1");
 		x.innerHTML="HelloWorld!!!";
 	}
 	function number_02()
 	{
-		x=document.getElementById("title");
-		x.innerHTML="運算";
-		x=document.getElementById("demo_1");
+		var a=1,b=2,sum=0;
 		sum=a+b;
-		x.innerHTML="a="+a+","+"b="+b+",a+b="+sum;	
+		document.getElementById("title").innerHTML="運算";	
+		document.getElementById("demo_1").innerHTML="a="+a+","+"b="+b+",a+b="+sum;	
 	}
 	function number_03()
 	{
 		var i,j;
 		
-		var div =document.getElementById("title");
-		var div =document.getElementById("demo_1");
-		title.textContent="九九乘法表";
-		demo_1.innerText="";
+		document.getElementById("title").innerHTML="九九乘法表";
+		document.getElementById("demo_1").innerHTML="";
+	
 		for(i=1;i<10;i++)
 		{
 			for(j=1;j<10;j++)
@@ -56,7 +55,6 @@
 			}
 			demo_1.innerText="\ "+demo_1.innerText+"\n";
 		}
-			// document.write("請按重新整理回頁面<br>");
 		
 	}
 </script>
