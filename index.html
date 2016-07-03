@@ -3,6 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>0630JS</title>
+<script language="JavaScript">
+	alert("你好我是Nara，這是我練習網頁技巧的網站^_^");
+	function ShowTime()
+	{
+
+		document.getElementById('showbox').innerHTML= new Date();
+		setTimeout('ShowTime()',1000);
+	}
+
+</script>
+
 </head>
 <style type="text/css" media="screen">
 	body
@@ -10,10 +21,12 @@
 		background-color:pink;
 	}	
 </style>
-<body>
+<body onload="ShowTime()">
 <h1>JavaScript練習網頁</h1>
+<div id="showbox">123</div>
 <h3 id="title"></h3>
 <div id="demo_1">TEST!!!!</div>
+
 <script>
 	
 	document.write("<h2>Nara</h2>");
@@ -57,15 +70,12 @@
 		}
 		
 	}
-	function number_04()
-	{
-		alert("你好啊A_A");
-	}
+	
 </script>
 <button type="button" onclick="number_01()">練習1</button>
 <button type="button" onclick="number_02()">練習2</button>
 <button type="button" onclick="number_03()">練習3</button>
-<button type="button" onclick="number_04()">練習4</button>
+
 
 
 
