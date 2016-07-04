@@ -7,10 +7,21 @@
 	alert("你好我是Nara，這是我練習網頁技巧的網站^_^");
 	function ShowTime()
 	{
+		var NowDate=new Date();
+		var h=NowDate.getHours();
+		var m=NowDate.getMinutes();
+		var s=NowDate.getSeconds();
 
-		document.getElementById('showbox').innerHTML= new Date();
+		var age =new Date(1996,4,27);
+
+	//直接顯示時間時區
+	//	document.getElementById('showbox').innerHTML= new Date();
+		document.getElementById('showbox_1').innerHTML= h+'時'+m+'分'+s+'秒';
+		document.getElementById('showbox_2').innerHTML= (NowDate-age)/(1000*60*60*24*365);
+		
 		setTimeout('ShowTime()',1000);
 	}
+
 
 </script>
 
@@ -22,8 +33,10 @@
 	}	
 </style>
 <body onload="ShowTime()">
-<h1>JavaScript練習網頁</h1>
-<div id="showbox">123</div>
+<h1>JavaScript練習網頁
+<div id="showbox_1">123</div>
+<div id="showbox_2">123</div>
+</h1>
 <h3 id="title"></h3>
 <div id="demo_1">TEST!!!!</div>
 
