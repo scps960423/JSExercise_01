@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>0630JS</title>
-<script language="JavaScript">
+	<script language="JavaScript">
 	alert("你好我是Nara，這是我練習網頁技巧的網站^_^");
 	function ShowTime()
 	{
@@ -15,82 +15,119 @@
 		var ageAfter=(NowDate-age)/(1000*60*60*24*365);
 	//直接顯示時間時區
 	//	document.getElementById('showbox').innerHTML= new Date();
-		document.getElementById('showbox_1').innerHTML= h+'時'+m+'分'+s+'秒';
+		document.getElementById('showbox_1').innerHTML= h+':'+m+':'+s;
 		document.getElementById('showbox_2').innerHTML= ageAfter.toFixed(9);
 		document.getElementById('showbox_3').innerHTML= "原來我活了"+ Math.floor((NowDate-age)/(1000*60*60*24))+"天";
 		setTimeout('ShowTime()',100);
 	}
 
-
 </script>
-
 </head>
-<style type="text/css" media="screen">
-	body
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+	html,body
 	{
-		background-color:pink;
-	}	
+		height: 100%;
+	}	 
+	#header
+	{
+		height:100px;
+		background:#fff;
+	}
+	#container-body,#sidebar
+	{
+		border:solid 1px #fff;
+	}
+	#wrap
+	{
+		min-height: 100%;
+		height: auto;
+		margin: 0 auto -60px;
+		padding: 0 0 60px;
+	}
+	#footre
+	{
+		height: 60px;
+		background:#fff;
+	}
+	.noN
+	{
+		display: inline;
+	}
 </style>
-<body onload="ShowTime()">
-<h1>JavaScript練習網頁</h1>
-<div id="showbox_1">123</div>
-<div id="showbox_2">123</div>
-<div id="showbox_3">123</div>
+<body onload="ShowTime()" style="background-color:pink;">
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="jquery-1.12.3.min.js"></script>
+	<div id="wrap">
+		<div id="header">
+			<div class="container" style="border:solid 1px #fff">
+				<h1 class="noN">Nara </h1 >
+				<h3 class="noN">Time：<div id="showbox_1" class="noN"></div></h3>
+			</div>
+		</div>
 
-<h3 id="title"></h3>
-<div id="demo_1">TEST!!!!</div>
-
-<script>
-	
-	document.write("<h2>Nara</h2>");
-	function number_01()
-	{
-		//寫法一
-		document.getElementById("title").innerHTML="按鈕觸發事件";
-		//寫法二
-		x=document.getElementById("demo_1");
-		x.innerHTML="HelloWorld!!!";
-	}
-	function number_02()
-	{
-		var a=1,b=2,sum=0;
-		sum=a+b;
-		document.getElementById("title").innerHTML="運算";	
-		document.getElementById("demo_1").innerHTML="a="+a+","+"b="+b+",a+b="+sum;	
-	}
-	function number_03()
-	{
-		var i,j;
-		
-		document.getElementById("title").innerHTML="九九乘法表";
-		document.getElementById("demo_1").innerHTML="";
-	
-		for(i=1;i<10;i++)
-		{
-			for(j=1;j<10;j++)
-			{
-				if((i*j)>=10)
-				{
-					demo_1.innerText=demo_1.innerText+j+"*"+i+"="+i*j+" | ";		
-				}
-				else
-				{
-					demo_1.innerText=demo_1.innerText+j+"*"+i+" = "+i*j+" | ";
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9" id="container-body">
 					
-				}
-			}
-			demo_1.innerText="\ "+demo_1.innerText+"\n";
-		}
-		
-	}
-	
-</script>
-<button type="button" onclick="number_01()">練習1</button>
-<button type="button" onclick="number_02()">練習2</button>
-<button type="button" onclick="number_03()">練習3</button>
+					<div id="showbox_2">123</div>
+					<div id="showbox_3">123</div>
 
+					<h3 id="title"></h3>
+					<div id="demo_1">TEST!!!!</div>
 
-
-
+					<script>
+						function number_01()
+						{
+							//寫法一
+							document.getElementById("title").innerHTML="按鈕觸發事件";
+							//寫法二
+							x=document.getElementById("demo_1");
+							x.innerHTML="HelloWorld!!!";
+						}
+						function number_02()
+						{
+							var a=1,b=2,sum=0;
+							sum=a+b;
+							document.getElementById("title").innerHTML="運算";	
+							document.getElementById("demo_1").innerHTML="a="+a+","+"b="+b+",a+b="+sum;	
+						}
+						function number_03()
+						{
+							var i,j;
+							
+							document.getElementById("title").innerHTML="九九乘法表";
+							document.getElementById("demo_1").innerHTML="";
+						
+							for(i=1;i<10;i++)
+							{
+								for(j=1;j<10;j++)
+								{
+									if((i*j)>=10)
+									{
+										demo_1.innerText=demo_1.innerText+j+"*"+i+"="+i*j+" | ";		
+									}
+									else
+									{
+										demo_1.innerText=demo_1.innerText+j+"*"+i+" = "+i*j+" | ";
+										
+									}
+								}
+								demo_1.innerText="\ "+demo_1.innerText+"\n";
+							}
+							
+						}
+					</script>
+					</div>
+				<div class="col-lg-3" id="sidebar">
+					<button type="button" onclick="number_01()">按鈕觸發事件</button><br>
+					<button type="button" onclick="number_02()">運算練習</button><br>
+					<button type="button" onclick="number_03()">九九乘法表</button><br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footre">
+	</div>
 </body>
 </html>
