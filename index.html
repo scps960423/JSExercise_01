@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>0630JS</title>
 	<script language="JavaScript">
-	alert("你好我是Nara，這是我練習網頁技巧的網站^_^");
-	function ShowTime()
-	{
-		var NowDate=new Date();
-		var h=NowDate.getHours();
-		var m=NowDate.getMinutes();
-		var s=NowDate.getSeconds();
-		var age =new Date(1996,4,27);
-		var ageAfter=(NowDate-age)/(1000*60*60*24*365);
-	//直接顯示時間時區
-	//	document.getElementById('showbox').innerHTML= new Date();
-		document.getElementById('showbox_1').innerHTML= h+':'+m+':'+s;
-		document.getElementById('showbox_2').innerHTML= ageAfter.toFixed(9);
-		document.getElementById('showbox_3').innerHTML= "原來我活了"+ Math.floor((NowDate-age)/(1000*60*60*24))+"天";
-		setTimeout('ShowTime()',100);
-	}
+		alert("你好我是Nara，這是我練習網頁技巧的網站^_^");
 
-</script>
+		function ShowTime() {
+			var NowDate = new Date();
+			var h = NowDate.getHours();
+			var m = NowDate.getMinutes();
+			var s = NowDate.getSeconds();
+			var age = new Date(1996, 4, 27);
+			var ageAfter = (NowDate - age) / (1000 * 60 * 60 * 24 * 365);
+			//直接顯示時間時區
+			//	document.getElementById('showbox').innerHTML= new Date();
+			document.getElementById('showbox_1').innerHTML = h + ':' + m + ':' + s;
+			document.getElementById('showbox_2').innerHTML = ageAfter.toFixed(9);
+			document.getElementById('showbox_3').innerHTML = "原來我活了" + Math.floor((NowDate - age) / (1000 * 60 * 60 * 24)) + "天";
+			setTimeout('ShowTime()', 100);
+		}
+	</script>
 </head>
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-	html,body
-	{
+	html,
+	body {
 		height: 100%;
-	}	 
-	#header
-	{
-		height:100px;
-		background:#fff;
 	}
-	#container-body,#sidebar
-	{
-		border:solid 1px #fff;
+
+	#header {
+		height: 100px;
+		background: #fff;
 	}
-	#wrap
-	{
+
+	#container-body,
+	#sidebar {
+		border: solid 1px #fff;
+	}
+
+	#wrap {
 		min-height: 100%;
 		height: auto;
 		margin: 0 auto -60px;
 		padding: 0 0 60px;
 	}
-	#footre
-	{
+
+	#footre {
 		height: 60px;
-		background:#fff;
+		background: #fff;
 	}
-	.noN
-	{
+
+	.noN {
 		display: inline;
 	}
 </style>
+
 <body onload="ShowTime()" style="background-color:pink;">
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="jquery-1.12.3.min.js"></script>
@@ -69,7 +71,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9" id="container-body">
-					
+
 					<div id="showbox_2">123</div>
 					<div id="showbox_3">123</div>
 
@@ -89,33 +91,33 @@
 						{
 							var a=1,b=2,sum=0;
 							sum=a+b;
-							document.getElementById("title").innerHTML="運算";	
-							document.getElementById("demo_1").innerHTML="a="+a+","+"b="+b+",a+b="+sum;	
+							document.getElementById("title").innerHTML="運算";
+							document.getElementById("demo_1").innerHTML="a="+a+","+"b="+b+",a+b="+sum;
 						}
 						function number_03()
 						{
 							var i,j;
-							
+
 							document.getElementById("title").innerHTML="九九乘法表";
 							document.getElementById("demo_1").innerHTML="";
-						
+
 							for(i=1;i<10;i++)
 							{
 								for(j=1;j<10;j++)
 								{
 									if((i*j)>=10)
 									{
-										demo_1.innerText=demo_1.innerText+j+"*"+i+"="+i*j+" | ";		
+										demo_1.innerText=demo_1.innerText+j+"*"+i+"="+i*j+" | ";
 									}
 									else
 									{
 										demo_1.innerText=demo_1.innerText+j+"*"+i+" = "+i*j+" | ";
-										
+
 									}
 								}
 								demo_1.innerText="\ "+demo_1.innerText+"\n";
 							}
-							
+
 						}
 					</script>
 					</div>
@@ -129,5 +131,6 @@
 	</div>
 	<div id="footre">
 	</div>
+	test
 </body>
 </html>
