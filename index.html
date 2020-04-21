@@ -1,138 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ja" class="no-js">
 <head>
-	<meta charset="UTF-8">
-	<title>0630JS</title>
-	<script language="JavaScript">
-		// alert("你好我是Nara，這是我練習網頁技巧的網站^_^");
-
-		function ShowTime() {
-			var NowDate = new Date();
-			var h = NowDate.getHours();
-			var m = NowDate.getMinutes();
-			var s = NowDate.getSeconds();
-			var age = new Date(1996, 4, 27);
-			var ageAfter = (NowDate - age) / (1000 * 60 * 60 * 24 * 365);
-			//直接顯示時間時區
-			//	document.getElementById('showbox').innerHTML= new Date();
-			document.getElementById('showbox_1').innerHTML = h + ':' + m + ':' + s;
-			document.getElementById('showbox_2').innerHTML = ageAfter.toFixed(9);
-			document.getElementById('showbox_3').innerHTML = "原來我活了" + Math.floor((NowDate - age) / (1000 * 60 * 60 * 24)) + "天";
-			setTimeout('ShowTime()', 100);
-		}
-	</script>
+  <meta charset="UTF-8">
+  <script src="/libs/jquery-1.10.2.min.js"></script>
+  <script src="/libs/modernizr-2.7.1-csstransforms3d-canvas-touch.js"></script>
+  <script src="/libs/megapix-image.js"></script>
+  <script src="/libs/three.min.js"></script>
+  <script src="/libs/Detector.js"></script>
+  <script src="/libs/CSS3DRenderer.js"></script>
+  <script src="/build/theta-viewer.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Sample of THETA Viewer</title>
 </head>
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-	html,
-	body {
-		height: 100%;
-	}
-
-	#header {
-		height: 100px;
-		background: #fff;
-	}
-
-	#container-body,
-	#sidebar {
-		border: solid 1px #fff;
-	}
-
-	#wrap {
-		min-height: 100%;
-		height: auto;
-		margin: 0 auto -60px;
-		padding: 0 0 60px;
-	}
-
-	#footre {
-		height: 60px;
-		background: #fff;
-	}
-
-	.noN {
-		display: inline;
-	}
-</style>
-
-<body onload="ShowTime()" style="background-color:pink;">
-	<script src="dist/js/bootstrap.min.js"></script>
-	<script src="jquery-1.12.3.min.js"></script>
-	<div id="wrap">
-		<div id="header">
-			<div class="container" style="border:solid 1px #fff">
-				<h1 class="noN">Nara </h1 >
-				<h3 class="noN">Time：<div id="showbox_1" class="noN"></div></h3>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9" id="container-body">
-
-					<div id="showbox_2">123</div>
-					<div id="showbox_3">123</div>
-
-					<h3 id="title"></h3>
-					<div id="demo_1">TEST!!!!</div>
-
-					<script>
-						function number_01()
-						{
-							//寫法一
-							document.getElementById("title").innerHTML="按鈕觸發事件";
-							//寫法二
-							x=document.getElementById("demo_1");
-							x.innerHTML="HelloWorld!!!";
-						}
-						function number_02()
-						{
-							var a=1,b=2,sum=0;
-							sum=a+b;
-							document.getElementById("title").innerHTML="運算";
-							document.getElementById("demo_1").innerHTML="a="+a+","+"b="+b+",a+b="+sum;
-						}
-						function number_03()
-						{
-							var i,j;
-
-							document.getElementById("title").innerHTML="九九乘法表";
-							document.getElementById("demo_1").innerHTML="";
-
-							for(i=1;i<10;i++)
-							{
-								for(j=1;j<10;j++)
-								{
-									if((i*j)>=10)
-									{
-										demo_1.innerText=demo_1.innerText+j+"*"+i+"="+i*j+" | ";
-									}
-									else
-									{
-										demo_1.innerText=demo_1.innerText+j+"*"+i+" = "+i*j+" | ";
-
-									}
-								}
-								demo_1.innerText="\ "+demo_1.innerText+"\n";
-							}
-
-						}
-					</script>
-					</div>
-				<div class="col-lg-3" id="sidebar">
-					<button type="button" onclick="number_01()">按鈕觸發事件</button><br>
-					<button type="button" onclick="number_02()">運算練習</button><br>
-					<button type="button" onclick="number_03()">九九乘法表</button><br>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="footre">
-	</div>
-	這是單純的測試文字！！！！！
-  <span class="skype-button bubble " data-contact-id="scps960423" data-color="#0d59a5"></span>
-  <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+<body>
+  <div id="theta-viewer"></div>
+  <script>
+/*global jQuery */
+(function ($) {
+    'use strict';
+    // #theta-viewerにパノラマ画像img/R0010035.JPGを表示
+    $("#theta-viewer").createThetaViewer('img/133938.jpg');
+}(jQuery));
+  </script>
 </body>
 </html>
